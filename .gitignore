@@ -46,4 +46,4 @@ Thumbs.db
 .firebase
 
 # secured
-/server/src/env-config/env.ts
+/src/env-config/env.ts
