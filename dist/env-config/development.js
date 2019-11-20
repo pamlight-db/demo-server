@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const lodash_1 = require("lodash");
-const env_1 = require("./env");
+const keys_env_1 = require("./keys.env");
 function normalizePort(val) {
     const port = parseInt(val, 10);
     if (isNaN(port)) {
@@ -18,7 +18,7 @@ exports.settings = {
     env: 'development',
     pamlight: {
         projectId: '5dc80b237eb1dc000438c02f',
-        projectKey: env_1.enVariables.projectSecret
+        projectKey: keys_env_1.enVariables.projectSecret
     }
 };
 // for production environment to read and modify

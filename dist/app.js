@@ -36,7 +36,9 @@ pamlightAdmin.start().then(() => {
 }).catch(e => {
     console.log(e);
 });
-const Server = require('http').createServer();
+const Server = require('http').createServer(() => {
+    console.log('Req received');
+});
 Server.listen(env_config_1.settings.port, () => {
     console.log(`Pamlight demo server listening on port ${env_config_1.settings.port} in ${env_config_1.settings.env} environment`);
 });
