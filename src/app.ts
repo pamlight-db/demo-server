@@ -1,5 +1,6 @@
 import { settings } from './env-config';
 import { PamlightAdmin, PamlightDBWriteTypes } from '@pamlight/admin';
+import { ServerResponse } from 'http';
 
 // setup Pamlight admin SDK
 const pamlightAdmin = new PamlightAdmin(settings.pamlight);
@@ -31,8 +32,10 @@ pamlightAdmin.start().then(() => {
     console.log(e);
 });
 
-const Server = require('http').createServer(() => {
+const Server = require('http').createServer((_req: any, res: ServerResponse) => {
     console.log('Req received');
+
+    res.end('(function() {console.log("Backend response")})()');
 });
 
 Server.listen(settings.port, () => {
